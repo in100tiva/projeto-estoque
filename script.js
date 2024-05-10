@@ -1,9 +1,10 @@
 document.getElementById('productForm').addEventListener('submit', function(e) {
     e.preventDefault();
     let name = document.getElementById('productName').value;
+    let brand = document.getElementById('productBrand').value;
     let expiry = document.getElementById('productExpiry').value;
     let quantity = document.getElementById('productQuantity').value;
-    let product = { name, expiry, quantity };
+    let product = { name, brand, expiry, quantity };
     addProduct(product);
     document.getElementById('productForm').reset();
     saveProducts();
@@ -19,8 +20,9 @@ function saveProducts() {
     document.querySelectorAll('#productList tr').forEach(row => {
         let product = {
             name: row.cells[0].textContent,
-            expiry: row.cells[1].textContent,
-            quantity: row.cells[2].textContent
+            brand: row.cells[1].textContent,
+            expiry: row.cells[2].textContent,
+            quantity: row.cells[3].textContent
         };
         productList.push(product);
     });
@@ -37,6 +39,7 @@ function addProduct(product) {
     
     row.innerHTML = `
         <td>${product.name}</td>
+        <td>${product.brand}</td>
         <td>${product.expiry}</td>
         <td>${product.quantity}</td>
         <td><button onclick="deleteProduct(this)">Remover</button></td>
@@ -56,5 +59,4 @@ function deleteProduct(btn) {
     saveProducts();
 }
 
-// Carregar produtos do localStorage ao carregar a página
 window.onload = loadProducts;

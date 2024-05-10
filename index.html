@@ -10,6 +10,7 @@
     <h1>Controle de Estoque</h1>
     <form id="productForm">
         <input type="text" id="productName" placeholder="Nome do Produto" required>
+        <input type="text" id="productBrand" placeholder="Marca do Produto" required>
         <input type="date" id="productExpiry" placeholder="Data de Validade" required>
         <input type="number" id="productQuantity" placeholder="Quantidade" required min="1">
         <button type="submit">Adicionar Produto</button>
@@ -19,6 +20,7 @@
         <thead>
             <tr>
                 <th>Produto</th>
+                <th>Marca</th>
                 <th>Validade</th>
                 <th>Quantidade</th>
                 <th>Ações</th>

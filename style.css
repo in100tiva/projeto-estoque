@@ -27,11 +27,15 @@ th {
     background-color: #f2f2f2;
 }
 
-.expiring {
-    background-color: #ffa07a;
+.warning {
+    background-color: #ffff99; /* Yellow background for warning */
 }
 
-#alert {
-    color: red;
-    font-weight: bold;
+.danger {
+    background-color: #ffcccb; /* Red background for danger */
+}
+
+#saveChanges {
+    display: none;
+    margin-top: 10px;
 }
